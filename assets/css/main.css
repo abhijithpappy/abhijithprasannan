@@ -749,11 +749,12 @@ h3 {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
 .contact-card {
+  min-width: 0;
   display: flex;
   align-items: center;
   gap: 18px;
@@ -809,6 +810,7 @@ h3 {
 
 .contact-handle {
   font-family: var(--mono);
+  white-space: nowrap;
   font-size: 14px;
   color: var(--muted);
   overflow: hidden;
@@ -858,6 +860,292 @@ h3 {
 
 .to-top:hover {
   color: var(--accent);
+}
+
+/* About extras ----------------------------------------------------------- */
+
+.about-sub {
+  margin-top: 18px !important;
+  max-width: 46em;
+}
+
+.stats {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.stat {
+  padding: 26px 28px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-num {
+  font-size: clamp(30px, 4vw, 40px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  background: linear-gradient(100deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* Skills ----------------------------------------------------------------- */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.skill-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 18px;
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--accent);
+  border-radius: 14px;
+  background: rgba(94, 200, 229, 0.08);
+  border: 1px solid rgba(94, 200, 229, 0.2);
+}
+
+.skill-card .tags {
+  margin-top: 18px;
+}
+
+/* Timeline --------------------------------------------------------------- */
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 200px;
+  width: 1px;
+  background: linear-gradient(var(--accent), var(--accent-2), transparent);
+  opacity: 0.5;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 0 40px;
+  position: relative;
+}
+
+.timeline-item + .timeline-item {
+  margin-top: 24px;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 195px;
+  top: 34px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 12px rgba(94, 200, 229, 0.6);
+}
+
+.timeline-meta {
+  padding-top: 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.timeline-date {
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.badge-now {
+  padding: 3px 10px;
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--green);
+  background: rgba(40, 200, 64, 0.1);
+  border: 1px solid rgba(40, 200, 64, 0.25);
+  border-radius: 999px;
+}
+
+.timeline-org {
+  margin-top: 6px !important;
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--accent) !important;
+}
+
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 0;
+  display: grid;
+  gap: 10px;
+}
+
+.checklist li {
+  position: relative;
+  padding-left: 28px;
+  color: var(--muted);
+}
+
+.checklist li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.45em;
+  width: 16px;
+  height: 16px;
+  border-radius: 5px;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.5 2.5L12 5.5' fill='none' stroke='%235ec8e5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+      center / 14px no-repeat,
+    rgba(94, 200, 229, 0.1);
+}
+
+.timeline-card .card-links {
+  margin-top: 20px;
+}
+
+.section-head-sm {
+  margin: 64px 0 20px;
+}
+
+.subhead {
+  font-size: clamp(24px, 3vw, 30px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.edu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.edu-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 24px 26px;
+}
+
+.edu-card p {
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+.edu-icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  border-radius: 14px;
+  background: rgba(139, 124, 246, 0.12);
+  border: 1px solid rgba(139, 124, 246, 0.25);
+}
+
+/* Contact extras --------------------------------------------------------- */
+
+.contact-card-wide {
+  grid-column: 1 / -1;
+  background:
+    linear-gradient(135deg, rgba(94, 200, 229, 0.08), rgba(139, 124, 246, 0.08)),
+    var(--surface);
+}
+
+.contact-icon.mail {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: 0 8px 24px rgba(139, 124, 246, 0.3);
+}
+
+.contact-icon.li {
+  background: linear-gradient(135deg, #0a66c2, #0077b5);
+  box-shadow: 0 8px 24px rgba(10, 102, 194, 0.35);
+}
+
+#work .quote-hero {
+  margin: 28px 0 0;
+}
+
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .timeline::before {
+    left: 5px;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+    padding-left: 32px;
+  }
+
+  .timeline-item::before {
+    left: 0;
+    top: 6px;
+  }
+
+  .timeline-meta {
+    padding: 0 0 12px;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+@media (max-width: 720px) {
+  .stats {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .skills-grid,
+  .edu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-item {
+    padding-left: 24px;
+  }
+
+  .stat,
+  .edu-card {
+    padding: 20px 22px;
+  }
 }
 
 /* Reveal animation ------------------------------------------------------- */
